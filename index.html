@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub Checker App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <main class="app-shell">
+    <header class="app-header">
+      <p class="eyebrow">GitHub profile explorer</p>
+      <h1>GitHub Checker</h1>
+      <p class="intro">Look up a GitHub profile, explore public repositories, and revisit recent searches.</p>
+    </header>
+    <form id="search-form">
+      <input type="text" id="search-input" placeholder="Enter GitHub username..." autocomplete="off"
+        aria-label="GitHub username" />
+      <button type="submit">Search</button>
+    </form>
+    <p id="status" role="status" aria-live="polite" aria-atomic="true"></p>
+    <div id="user-card"></div>
+    <section aria-labelledby="history-heading">
+      <h2 id="history-heading" class="section-heading">Recent searches</h2>
+      <div id="history-card" class="history-list"></div>
+    </section>
+    <section aria-label="Repositories">
+      <div id="repo-controls" class="repo-controls" hidden>
+        <input type="text" id="repo-search-input" placeholder="Search repositories..." autocomplete="off"
+          aria-label="Filter repositories by name" />
+        <select id="categories" aria-label="Sort repositories">
+          <option value="recently updated">Recently Updated</option>
+          <option value="most stars">Most Stars</option>
+        </select>
+      </div>
+      <div id="repos-card"></div>
+    </section>
+  </main>
+  <script type="module" src="index.js"></script>
+</body>
+
+</html>
