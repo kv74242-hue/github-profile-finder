@@ -10,7 +10,7 @@ export async function fetchGithubUser(username, signal) {
         if (response.status === 403) {
             throw new Error(`API Hourly Limit Reached`)
         }
-        throw new Error(`User not found with the HTTP code ${response.status}`)
+        throw new Error(`Request Failed (HTTP ${response.status})`)
     }
 
     return response.json()
@@ -28,7 +28,7 @@ export async function fetchRepos(username, signal) {
         if (repoResponse.status === 403) {
             throw new Error(`API Hourly limit reached`)
         }
-        throw new Error(`Repo not found with the HTTP code ${repoResponse.status}`)
+        throw new Error(`Request Failed (HTTP ${repoResponse.status})`)
     }
 
     return repoResponse.json()
