@@ -45,6 +45,7 @@ export function renderRepo(repos, emptyMessage = 'No public repositories found')
     }
     for (let repo of repos) {
         const repoCard = document.createElement('article')
+        repoCard.classList.add('repo-card')
         const repoName = document.createElement('h3')
         repoName.textContent = repo.name || 'No Repo Available'
         if (repo.html_url?.startsWith('https://')) {
@@ -62,7 +63,7 @@ export function renderRepo(repos, emptyMessage = 'No public repositories found')
         repoCard.appendChild(repoDescription)
 
         const repoLanguage = document.createElement('p')
-        repoLanguage.textContent = `Primary Language: ${repo.language || 'Primary Language Not available'}`
+        repoLanguage.textContent = `Primary Language: ${repo.language || 'Not available'}`
         repoCard.appendChild(repoLanguage)
 
         const repoDetails = document.createElement('p')
